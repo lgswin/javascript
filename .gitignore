@@ -2,3 +2,7 @@
 06_TestServer/dist/
 06_TestServer/.cache/
 06_TestServer/package-lock.json
+07_JS-Test/node_modules/
+07_JS-Test/.cache/
+07_JS-Test/dist/
+07_JS-Test/package-lock.json
