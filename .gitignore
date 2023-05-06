@@ -6,3 +6,7 @@
 07_JS-Test/.cache/
 07_JS-Test/dist/
 07_JS-Test/package-lock.json
+08_JS-Class/node_modules/
+08_JS-Class/.cache/
+08_JS-Class/dist/
+08_JS-Class/package-lock.json
