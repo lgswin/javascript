@@ -10,3 +10,12 @@
 08_JS-Class/.cache/
 08_JS-Class/dist/
 08_JS-Class/package-lock.json
+node_modules
+package-lock.json
+package.json
+.cache/
+.cache/
+.cache/
+dist/
+dist/
+dist/
