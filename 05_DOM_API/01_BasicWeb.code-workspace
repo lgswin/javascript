@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "../../Conestoga/01_BasicWeb"
+	},
+	{
+		"path": "../../Conestoga/02_WebDev"
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "01_BasicWeb"
+  }
+}

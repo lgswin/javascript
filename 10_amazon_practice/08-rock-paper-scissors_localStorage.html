@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Rock Paper Scissors</div>
+    <div>
+        <button onclick="
+            checkWinner(1);
+        ">Rock</button>
+        <button onclick="
+            checkWinner(2);
+        ">Paper</button>
+        <button onclick="
+            checkWinner(3);
+        ">Scissors</button>
+        <button onclick="
+            resetScore();
+        ">Reset score</button>
+    </div>
+
+    <script>
+        // let score = JSON.parse(localStorage.getItem('score'));
+
+        // if (!score) {
+        //     score = {
+        //         wins: 0,
+        //         loses: 0,
+        //         ties: 0
+        //     };
+        // }
+
+        let score = JSON.parse(
+            localStorage.getItem('score')) || 
+            {
+                wins: 0,
+                loses: 0,
+                ties: 0
+            };
+        
+        const selections = ['', 'rock', 'paper', 'scissors'];
+        
+        function resetScore() {
+            score.wins = 0;
+            score.loses = 0;
+            score.ties = 0;
+            localStorage.removeItem('score');
+        }
+        function checkWinner(user) {
+            const computerSelection = Math.round(Math.random()*2+1);
+            let result = 0;
+            if (user === 1) {
+                if (computerSelection === 2)
+                    result = 'you lose!';
+                else if (computerSelection === 3)
+                    result = 'you win!';
+                else 
+                    result = 'draw!';
+            }
+            if (user === 2) {
+                if (computerSelection === 3)
+                    result = 'you lose!';
+                else if (computerSelection === 1)
+                    result = 'you win!';
+                else 
+                    result = 'draw!';
+            }
+            if (user === 3) {
+                if (computerSelection === 1)
+                    result = 'you lose!';
+                else if (computerSelection === 2)
+                    result = 'you win!';
+                else 
+                    result = 'draw!';
+            }
+
+            localStorage.setItem('score', JSON.stringify(score));
+
+            if (result === 'you win!') score.wins++;
+            else if (result === 'you lose!') score.loses++;
+            else score.ties++;
+
+            alert(`Computer is ${selections[computerSelection]}, ${result} \nwins : ${score.wins}, loses : ${score.loses}, ties : ${score.ties}`);
+        }
+    </script>
+</body>
+</html>
